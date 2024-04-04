@@ -1,4 +1,4 @@
-export default function log({ turns }) {
+export default function Log({ turns }) {
   console.log(turns);
 
   let turnItems = [];
@@ -7,9 +7,9 @@ export default function log({ turns }) {
     turnItems.push({ player: turn.player, square: turn.square });
   }
 
-  turnItems = turnItems.map((item, index) => (
-    <li key={index}>
-      {item.player} in position {item.square.row} {item.square.col}
+  turnItems = turnItems.map((item) => (
+    <li key={`${item.square.row}${item.square.col}`}>
+      {item.player} selected {item.square.row},{item.square.col}
     </li>
   ));
 
